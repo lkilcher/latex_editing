@@ -501,24 +501,24 @@
 \newif\ifnumberingpars \numberingparstrue%
 \newif\ifnpar \npartrue%
 
-\ifthenelse{\boolean{@Access@pdf}}{%
-  \let\originaleverypar\everypar%
-  \newtoks\npeverypar%
-  \npeverypar{}%
-  % Call everypar with the argument extended with the toks
-  \def\everypar#1{%
-    \originaleverypar{#1\ifnumberingpars\the\npeverypar\fi}}%
-  \npeverypar{%
-    \ifnpar{%
-      \stepcounter{ParCounter}%
-     %\pdfliteral{/Artifact BMC}%
-     % \llap{\small\arabic{ParCounter}\qquad}%
-     %\pdfliteral{EMC}%
-      \ifSpezialTextActive\else \PDFTextObj \fi%
-      \PDFMarkContent%
-    }\fi%
-  }%
-}{}
+% \ifthenelse{\boolean{@Access@pdf}}{%
+%   \let\originaleverypar\everypar%
+%   \newtoks\npeverypar%
+%   \npeverypar{}%
+%   % Call everypar with the argument extended with the toks
+%   \def\everypar#1{%
+%     \originaleverypar{#1\ifnumberingpars\the\npeverypar\fi}}%
+%   \npeverypar{%
+%     \ifnpar{%
+%       \stepcounter{ParCounter}%
+%      %\pdfliteral{/Artifact BMC}%
+%      % \llap{\small\arabic{ParCounter}\qquad}%
+%      %\pdfliteral{EMC}%
+%       \ifSpezialTextActive\else \PDFTextObj \fi%
+%       \PDFMarkContent%
+%     }\fi%
+%   }%
+% }{}
 \AtBeginDocument{%
 \PDFStructObj{Document}{\empty}%
 \everypar{}%
