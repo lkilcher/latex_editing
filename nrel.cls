@@ -16,7 +16,7 @@
 % Create Options
 % -------------------------------------------------------------
 %% PDF properties
-\pdfinterwordspaceon
+%\pdfinterwordspaceon
 \pdfminorversion=8
 
 \RequirePackage{xifthen}
